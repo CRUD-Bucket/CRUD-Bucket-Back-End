@@ -6,17 +6,17 @@ const Folder = models.folder;
 
 const authenticate = require('./concerns/authenticate');
 
-// const index = (req, res, next) => {
-//   Folder.find()
-//     .then(folders => res.json({ folders }))
-//     .catch(err => next(err));
-// };
-//
-// const show = (req, res, next) => {
-//   Folder.findById(req.params.id)
-//     .then(folder => folder ? res.json({ folder }) : next())
-//     .catch(err => next(err));
-// };
+const index = (req, res, next) => {
+  Folder.find()
+    .then(folders => res.json({ folders }))
+    .catch(err => next(err));
+};
+
+const show = (req, res, next) => {
+  Folder.findById(req.params.id)
+    .then(folder => folder ? res.json({ folder }) : next())
+    .catch(err => next(err));
+};
 
 const create = (req, res, next) => {
   let folder = Object.assign(req.body.folder, {
@@ -57,8 +57,8 @@ const create = (req, res, next) => {
 // };
 
 module.exports = controller({
-  // index,
-  // show,
+  index,
+  show,
   create,
   // update,
   // destroy,
