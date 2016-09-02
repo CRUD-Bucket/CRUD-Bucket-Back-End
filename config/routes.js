@@ -19,6 +19,8 @@ module.exports = require('lib/wiring/routes')
 
 //folder routes
 .post('/folders', 'folders#create')
+.get('/folders', 'folders#index')
+.get('/folders/:id', 'folders#show')
 
 // all routes created
 ;
