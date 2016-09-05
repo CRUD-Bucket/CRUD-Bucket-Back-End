@@ -25,5 +25,8 @@ module.exports = require('lib/wiring/routes')
 .patch('/folders/:id', 'folders#update')
 .delete('/folders/:id', 'folders#destroy')
 
+//uploads routes
+.resources('files')
+
 // all routes created
 ;

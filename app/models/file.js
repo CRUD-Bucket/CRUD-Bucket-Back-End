@@ -7,10 +7,10 @@ const fileSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  path: {
-    type: String,
-    required: true,
-  },
+  // path: {
+  //   type: String,
+  //   required: true,
+  // },
   url: {
     type: String,
     required: true,
