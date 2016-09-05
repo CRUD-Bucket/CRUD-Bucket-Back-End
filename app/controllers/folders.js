@@ -20,6 +20,12 @@ const show = (req, res, next) => {
     .catch(err => next(err));
 };
 
+const showByOwner = (req, res, next) => {
+  Folder.find({ path: req.currentUser._id })
+    .then(folder => folder ? res.json({ folder }) : next())
+    .catch(err => next(err));
+};
+
 //create a folder
 const create = (req, res, next) => {
   let folder = Object.assign(req.body.folder, {
@@ -66,6 +72,7 @@ module.exports = controller({
   create,
   update,
   destroy,
+  showByOwner,
 }, { before: [
   { method: authenticate, except: ['index', 'show'] },
 ], });

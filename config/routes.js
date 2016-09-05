@@ -21,15 +21,9 @@ module.exports = require('lib/wiring/routes')
 .post('/folders', 'folders#create')
 .get('/folders', 'folders#index')
 .get('/folders/:id', 'folders#show')
+.get('/userfolders', 'folders#showByOwner')
 .patch('/folders/:id', 'folders#update')
 .delete('/folders/:id', 'folders#destroy')
-
-//file routes
-.post('/files', 'files#create')
-.get('/files', 'files#index')
-.get('/files/:id', 'files#show')
-.patch('/files/:id', 'files#update')
-.delete('/files/:id', 'files#destroy')
 
 // all routes created
 ;

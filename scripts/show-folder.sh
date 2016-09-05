@@ -1,2 +1,2 @@
-curl --include --request GET http://localhost:3000/folders/57c9ee4e67c11dd53cb2d845 \
-  --header "Authorization: Token token=RC6tF8ImUF4k6cUPesUOnhkNX+HncO9unjGyukV6ylQ=--ylI/A25PIIiMpnl+M8sw2SgbTjr8BtINKUM+fs32IOU="
+curl --include --request GET http://localhost:3000/usersfolders \
+  --header "Authorization: Token token=TwuBrnsp1Pqco2omLEgKN4RYM+7f6VNhE9uwkCmRunc=--eSAlZCqxtgD2zHXjEK9iNwJGveRcng3WUkbKpccx+1E="
