@@ -28,7 +28,8 @@ const create = (req, res, next) => {
     .then((s3response) =>
       File.create({
         url: s3response.Location,
-        title: req.body.image.title,
+        name: req.body.image.name,
+        _owner: req.currentUser._id,
       }))
     .then((file) => res.json({ file }))
     .catch((err) => next(err));
