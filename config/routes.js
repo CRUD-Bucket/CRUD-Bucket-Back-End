@@ -18,6 +18,7 @@ module.exports = require('lib/wiring/routes')
 .resources('users', { only: ['index', 'show'] })
 
 //folder routes
+.post('/rootfolders', 'folders#createRoot')
 .post('/folders', 'folders#create')
 .get('/folders', 'folders#index')
 .get('/folders/:id', 'folders#show')

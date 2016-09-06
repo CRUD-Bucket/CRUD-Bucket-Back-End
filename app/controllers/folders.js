@@ -36,6 +36,14 @@ const create = (req, res, next) => {
     .catch(err => next(err));
 };
 
+//create a folder
+const createRoot = (req, res, next) => {
+  let folder = req.body.folder;
+  Folder.create(folder)
+    .then(folder => res.json({ folder }))
+    .catch(err => next(err));
+};
+
 //update a folder by id
 const update = (req, res, next) => {
   let search = { _id: req.params.id, _owner: req.currentUser._id };
@@ -73,6 +81,7 @@ module.exports = controller({
   update,
   destroy,
   showByOwner,
+  createRoot,
 }, { before: [
-  { method: authenticate, except: ['index', 'show'] },
+  { method: authenticate, except: ['index', 'show', 'createRoot'] },
 ], });
