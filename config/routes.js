@@ -23,6 +23,8 @@ module.exports = require('lib/wiring/routes')
 .get('/folders/:path', 'folders#index')
 .get('/userfolders', 'folders#showByOwner')
 
+.get('/rootfiles/:path', 'files#showRoot')
+
 //uploads routes
 .resources('files')
 .resources('folders')

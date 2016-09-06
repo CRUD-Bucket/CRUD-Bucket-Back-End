@@ -23,6 +23,12 @@ const show = (req, res, next) => {
     .catch(err => next(err));
 };
 
+const showRoot = (req, res, next) => {
+  File.find({ path: req.params.path })
+    .then(files => res.json({ files }))
+    .catch(err => next(err));
+};
+
 const create = (req, res, next) => {
   s3Upload(req.file)
     .then((s3response) =>
@@ -71,7 +77,8 @@ module.exports = controller({
   create,
   update,
   destroy,
+  showRoot,
 }, { before: [
   { method: multerUpload.single('image[file]'), only: ['create'] },
-  { method: authenticate, except: ['index', 'show'] },
+  { method: authenticate, except: ['index', 'show', 'showRoot'] },
 ], });
