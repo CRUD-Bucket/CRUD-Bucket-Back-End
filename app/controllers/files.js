@@ -25,7 +25,7 @@ const show = (req, res, next) => {
 
 const showRoot = (req, res, next) => {
   File.find({ path: req.params.path })
-    .then(folders => res.json({ folders }))
+    .then(files => res.json({ files }))
     .catch(err => next(err));
 };
 
