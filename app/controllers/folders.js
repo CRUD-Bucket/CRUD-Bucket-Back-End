@@ -89,6 +89,7 @@ module.exports = controller({
   showByOwner,
   createRoot,
   showRoot,
+
 }, { before: [
   { method: authenticate, except: ['index', 'show', 'createRoot', 'showRoot'] },
 ], });
