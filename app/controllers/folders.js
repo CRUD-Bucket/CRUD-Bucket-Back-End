@@ -42,7 +42,7 @@ const create = (req, res, next) => {
     .catch(err => next(err));
 };
 
-//create a folder
+//create a rootfolder
 const createRoot = (req, res, next) => {
   let folder = req.body.folder;
   Folder.create(folder)
@@ -89,7 +89,6 @@ module.exports = controller({
   showByOwner,
   createRoot,
   showRoot,
-
 }, { before: [
   { method: authenticate, except: ['index', 'show', 'createRoot', 'showRoot'] },
 ], });
