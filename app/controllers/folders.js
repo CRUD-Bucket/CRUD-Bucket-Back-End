@@ -8,7 +8,13 @@ const authenticate = require('./concerns/authenticate');
 
 //get all folders
 const index = (req, res, next) => {
-  Folder.find()
+  Folder.find({ path: req.params.path })
+    .then(folders => res.json({ folders }))
+    .catch(err => next(err));
+};
+
+const showRoot = (req, res, next) => {
+  Folder.find({ path: req.params.path })
     .then(folders => res.json({ folders }))
     .catch(err => next(err));
 };
@@ -31,6 +37,14 @@ const create = (req, res, next) => {
   let folder = Object.assign(req.body.folder, {
     _owner: req.currentUser._id,
   });
+  Folder.create(folder)
+    .then(folder => res.json({ folder }))
+    .catch(err => next(err));
+};
+
+//create a folder
+const createRoot = (req, res, next) => {
+  let folder = req.body.folder;
   Folder.create(folder)
     .then(folder => res.json({ folder }))
     .catch(err => next(err));
@@ -73,6 +87,8 @@ module.exports = controller({
   update,
   destroy,
   showByOwner,
+  createRoot,
+  showRoot,
 }, { before: [
-  { method: authenticate, except: ['index', 'show'] },
+  { method: authenticate, except: ['index', 'show', 'createRoot', 'showRoot'] },
 ], });
