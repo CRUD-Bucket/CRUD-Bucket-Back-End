@@ -17,5 +17,17 @@ module.exports = require('lib/wiring/routes')
 .patch('/change-password/:id', 'users#changepw')
 .resources('users', { only: ['index', 'show'] })
 
+//folder routes
+.post('/rootfolders', 'folders#createRoot')
+.get('/rootfolders/:path', 'folders#showRoot')
+.get('/folders/:path', 'folders#index')
+.get('/userfolders', 'folders#showByOwner')
+
+.get('/rootfiles/:path', 'files#showRoot')
+
+//uploads routes
+.resources('files')
+.resources('folders')
+
 // all routes created
 ;

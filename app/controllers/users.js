@@ -119,5 +119,5 @@ module.exports = controller({
   signout,
   changepw,
 }, { before: [
-  { method: authenticate, except: ['signup', 'signin'] },
+  { method: authenticate, except: ['index', 'signup', 'signin'] },
 ], });
