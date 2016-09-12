@@ -1,8 +1,23 @@
-# API
+# CRUD Bucket API
+
+CRUD Bucket is a web application which allows users to easily upload, organize
+and share files. All users can view and download all other users’ files.
+Users can rename and delete files their own files, as well. Date uploaded and
+date modified are automatically generated and shown for each file. Files can be
+organized into folders, and folders can be created within other folders
+allowing users to organize their files as they like.
+
+## Links
+
+[Deployed Back-end API](https://floating-tundra-60505.herokuapp.com/)
+
+[Front-end Repo](https://github.com/CRUD-Bucket/CRUD-Bucket-Front-End)
+
+## API
 
 Use this API to communicate with the CRUD-Bucket Back End.
 
-## Authentication
+### Authentication
 
 | Verb   | URI Pattern            | Controller#Action    |
 |--------|------------------------|----------------------|
@@ -388,11 +403,6 @@ curl --include --request DELETE http://localhost:3000/files/:id \
   --header "Content-Type: application/json" \
 ```
 
-## Links
-
-https://slack-redir.net/link?url=https%3A%2F%2Ffloating-tundra-60505.herokuapp.com
-
-https://github.com/CRUD-Bucket/CRUD-Bucket-Front-End
 
 ## [License](LICENSE)
 
