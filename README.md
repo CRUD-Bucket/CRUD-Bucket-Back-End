@@ -388,6 +388,12 @@ curl --include --request DELETE http://localhost:3000/files/:id \
   --header "Content-Type: application/json" \
 ```
 
+## Links
+
+https://slack-redir.net/link?url=https%3A%2F%2Ffloating-tundra-60505.herokuapp.com
+
+https://github.com/CRUD-Bucket/CRUD-Bucket-Front-End
+
 ## [License](LICENSE)
 
 1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
